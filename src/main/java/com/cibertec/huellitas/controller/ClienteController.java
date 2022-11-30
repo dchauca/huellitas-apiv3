@@ -17,13 +17,14 @@ public class ClienteController {
 
     @Autowired
     private ClienteService clienteService;
+    private String ResponseEntity;
 
     @GetMapping("clientes")
     public ResponseEntity<List<ClienteDTO>> listarClientes(){
         return new ResponseEntity<>(clienteService.listarClientes(), HttpStatus.OK);
     }
 
-    @GetMapping("/clientes/{clienteId}")
+    @GetMapping("clientes/{clienteId}")
     public ResponseEntity<ClienteDTO> obtenerClientePorId(@PathVariable("clienteId") long clienteid){
         return new ResponseEntity<>(clienteService.obtenerClientePorID(clienteid), HttpStatus.OK);
     }
@@ -38,7 +39,7 @@ public class ClienteController {
         return new ResponseEntity<>(clienteService.actualizarCliente(clienteUpdateDTO), HttpStatus.OK);
     }
 
-    @DeleteMapping("/clientes/{clienteId}")
+    @DeleteMapping("clientes/{clienteId}")
     public ResponseEntity<String> eliminarCliente(@PathVariable("clienteId") long clienteId){
         return new ResponseEntity<>(clienteService.eliminarCliente(clienteId), HttpStatus.OK);
     }

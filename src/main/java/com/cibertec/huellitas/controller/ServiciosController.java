@@ -24,7 +24,7 @@ public class ServiciosController {
         return new ResponseEntity<>(serviciosService.listarServicios(), HttpStatus.OK);
     }
 
-    @GetMapping("/servicios/{serviciosId}")
+    @GetMapping("servicios/{serviciosId}")
     public ResponseEntity<ServiciosDTO> obtenerServiciosPorId(@PathVariable("serviciosId") long serviciosid){
         return new ResponseEntity<>(serviciosService.obtenerServicioPorID(serviciosid), HttpStatus.OK);
     }
@@ -39,7 +39,7 @@ public class ServiciosController {
         return new ResponseEntity<>(serviciosService.actualizarServicio(serviciosUpdateDTO), HttpStatus.OK);
     }
 
-    @DeleteMapping("/servicioss/{serviciosId}")
+    @DeleteMapping("servicios/{serviciosId}")
     public ResponseEntity<String> eliminarServicios(@PathVariable("serviciosId") long serviciosId){
         return new ResponseEntity<>(serviciosService.eliminarServicio(serviciosId), HttpStatus.OK);
     }

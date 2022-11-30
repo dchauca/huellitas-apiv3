@@ -23,7 +23,7 @@ public class DetCitaController {
         return new ResponseEntity<>(detCitaService.listarDetCitas(), HttpStatus.OK);
     }
 
-    @GetMapping("/detCitas/{detCitaId}")
+    @GetMapping("detCitas/{detCitaId}")
     public ResponseEntity<DetCitaDTO> obtenerDetCitaPorId(@PathVariable("detCitaId") long detCitaid){
         return new ResponseEntity<>(detCitaService.obtenerDetCitaPorID(detCitaid), HttpStatus.OK);
     }
@@ -38,7 +38,7 @@ public class DetCitaController {
         return new ResponseEntity<>(detCitaService.actualizarDetCita(detCitaUpdateDTO), HttpStatus.OK);
     }
 
-    @DeleteMapping("/detCitas/{detCitaId}")
+    @DeleteMapping("detCitas/{detCitaId}")
     public ResponseEntity<String> eliminarDetCita(@PathVariable("detCitaId") long detCitaId){
         return new ResponseEntity<>(detCitaService.eliminarDetCita(detCitaId), HttpStatus.OK);
     }

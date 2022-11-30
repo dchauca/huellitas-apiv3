@@ -24,7 +24,7 @@ public class LocalesController {
         return new ResponseEntity<>(localesService.listarLocales(), HttpStatus.OK);
     }
 
-    @GetMapping("/locales/{localesId}")
+    @GetMapping("locales/{localesId}")
     public ResponseEntity<LocalesDTO> obtenerLocalesPorId(@PathVariable("localesId") long localesid){
         return new ResponseEntity<>(localesService.obtenerLocalesPorID(localesid), HttpStatus.OK);
     }
@@ -34,12 +34,12 @@ public class LocalesController {
         return new ResponseEntity<>(localesService.registrarLocales(localesCreateDTO), HttpStatus.OK);
     }
 
-    @PutMapping("Locales")
+    @PutMapping("locales")
     public ResponseEntity<LocalesDTO> actualizarLocales(@RequestBody LocalesUpdateDTO localesUpdateDTO){
         return new ResponseEntity<>(localesService.actualizarLocales(localesUpdateDTO), HttpStatus.OK);
     }
 
-    @DeleteMapping("/localess/{localesId}")
+    @DeleteMapping("localess/{localesId}")
     public ResponseEntity<String> eliminarLocales(@PathVariable("localesId") long localesId){
         return new ResponseEntity<>(localesService.eliminarLocales(localesId), HttpStatus.OK);
     }

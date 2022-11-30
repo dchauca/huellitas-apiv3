@@ -23,7 +23,7 @@ public class CitaController {
         return new ResponseEntity<>(citaService.listarCitas(), HttpStatus.OK);
     }
 
-    @GetMapping("/citas/{citaId}")
+    @GetMapping("citas/{citaId}")
     public ResponseEntity<CitaDTO> obtenerCitaPorId(@PathVariable("citaId") long citaId){
         return new ResponseEntity<>(citaService.obtenerCitaPorID(citaId), HttpStatus.OK);
     }
@@ -38,7 +38,7 @@ public class CitaController {
         return new ResponseEntity<>(citaService.actualizarCita(citaUpdateDTO), HttpStatus.OK);
     }
 
-    @DeleteMapping("/citas/{citaId}")
+    @DeleteMapping("citas/{citaId}")
     public ResponseEntity<String> eliminarCita(@PathVariable("citaId") long citaId){
         return new ResponseEntity<>(citaService.eliminarCita(citaId), HttpStatus.OK);
     }

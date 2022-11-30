@@ -23,7 +23,7 @@ public class TipoMascotaController {
         return new ResponseEntity<>(tipoMascotaService.listarTipoMascotas(), HttpStatus.OK);
     }
 
-    @GetMapping("/tipoMascotas/{tipoMascotaId}")
+    @GetMapping("tipoMascotas/{tipoMascotaId}")
     public ResponseEntity<TipoMascotaDTO> obtenerTipoMascotaPorId(@PathVariable("tipoMascotaId") long tipoMascotaid){
         return new ResponseEntity<>(tipoMascotaService.obtenerTipoMascotaPorID(tipoMascotaid), HttpStatus.OK);
     }
@@ -38,7 +38,7 @@ public class TipoMascotaController {
         return new ResponseEntity<>(tipoMascotaService.actualizarTipoMascota(tipoMascotaUpdateDTO), HttpStatus.OK);
     }
 
-    @DeleteMapping("/tipoMascotas/{tipoMascotaId}")
+    @DeleteMapping("tipoMascotas/{tipoMascotaId}")
     public ResponseEntity<String> eliminarTipoMascota(@PathVariable("tipoMascotaId") long tipoMascotaId){
         return new ResponseEntity<>(tipoMascotaService.eliminarTipoMascota(tipoMascotaId), HttpStatus.OK);
     }
